@@ -28,12 +28,10 @@ module.exports.policies = {
 
   // '*': true,
 
-  /***************************************************************************
-  *                                                                          *
-  * Here's an example of mapping some policies to run before a controller    *
-  * and its actions                                                          *
-  *                                                                          *
-  ***************************************************************************/
+  AdminController: {
+      '*': 'adminAuth',
+      'login': true
+  }
 	// RabbitController: {
 
 		// Apply the `false` policy as the default for all of RabbitController's actions
