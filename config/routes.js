@@ -33,7 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': 'IndexController.index',
-
+  '/mail': 'IndexController.mail',
   '/admin/login': 'AdminController.login',
   '/admin': 'AdminController.index'
 

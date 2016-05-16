@@ -165,7 +165,7 @@ $(document).ready(function() {
     
     /* ======= RSVP Form (Dependent form field) ============ */
     $('#cguests').on("change", function(){
-        
+
         if ($(this).val() == "") {
             $('.guestinfo-group').slideUp(); //hide
             console.log('not selected');
@@ -173,14 +173,14 @@ $(document).ready(function() {
             $('.guestinfo-group').slideUp(); //hide
             console.log('No guests');
             $('#cguestinfo').val('No Guests'); //Pass data to the field so mailer.php can send the form.
-            
+
         } else {
             $('.guestinfo-group').slideDown(); //show
             $('#cguestinfo').val(''); //Clear data
             console.log('Has guests');
         }
 
-       
+
     });
     
     /* ======= jQuery form validator ======= */ 

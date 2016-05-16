@@ -20,5 +20,9 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
+  
+  contactMail: 'bret.maxime@gmail.com',
+  gmailSmtpUsername: 'bret.maxime',
+  gmailSmtpPassword: null, // must be set on local.js
 
 };
