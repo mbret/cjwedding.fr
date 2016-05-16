@@ -35,6 +35,6 @@ module.exports = {
   //   level: "silent"
   // }
 
-    contactMail: 'celine.bret67@gmail.com'
+    // contactMail: 'celine.bret67@gmail.com'
 
 };

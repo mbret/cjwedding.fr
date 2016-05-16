@@ -11,14 +11,10 @@
  */
 
 module.exports = {
-
-  /***************************************************************************
-   * Set the default database connection for models in the development       *
-   * environment (see config/connections.js and config/models.js )           *
-   ***************************************************************************/
-
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
-
+  // from
+  contactMail: 'contact@cjwedding.fr',
+  // to retrieve mail from users
+  recipientMail: 'bret.maxime@gmail.com',
+  gmailSmtpUsername: 'bret.maxime',
+  gmailSmtpPassword: null, // must be set on local.js
 };
