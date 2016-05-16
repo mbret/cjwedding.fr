@@ -1,0 +1,87 @@
+<div id="rsvp-modal" class="modal modal-rsvp"  tabindex="-1" role="dialog" aria-labelledby="rsvpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 id="rsvpModalLabel" class="modal-title text-center">
+                    <span class="title script display-block"><span class="title-deco-left"></span><span class="title-text">Confirmez</span><span class="title-deco-right"></span></span>
+                    <span class="subtitle display-block">
+                        Venez vous déhancher avec nous sur <br>le rythme endiablé de la danse des canards.<br>
+                        <small>Merci de confirmer avant le 15 juillet 2016, <br>après il sera trop tard et vous ne pourrez plus venir, <br>dommage pour vous.</small>
+                    </span>
+                </h2>
+
+            </div><!--//modal-header-->
+            <div class="modal-body">
+                <form id="rsvp-form" class="rsvp-form form" method="post" action="mailer.php">
+                    <div id="form-messages" class="text-center"></div>
+                    <div class="row text-left">
+                        <div class="name-group col-md-6 col-sm-6 col-xs-12 form-group">
+                            <div class="form-group-inner">
+                                <label for="cname">Nom & prénom</label>
+                                <input type="text" class="form-control" id="cname" name="name" placeholder="Nom & prénom" minlength="2"  aria-required="true" required>
+                            </div>
+                        </div>
+
+                        <div class="email-group col-md-6 col-sm-6 col-xs-12 form-group">
+                            <div class="form-group-inner">
+                            <label for="cemail">Email</label>
+                            <input type="email" class="form-control" id="cemail" name="email" placeholder="Votre adresse email" aria-required="true" required>
+                            </div>
+                        </div>
+
+                        <div class="events-group col-md-6 col-sm-6 col-xs-12 form-group">
+                            <div class="form-group-inner">
+                                <label for="cevents">Nous serons présents pour :</label>
+                                <select class="form-control" id="cevents" name="events" aria-required="true" required>
+                                    <option value="" selected>Merci de choisir</option>
+                                    <option value="La soirée">La soirée</option>
+                                    <option value="La soirée et le brunch">La soirée et le brunch</option>
+                                    <option value="Le brunch (on veut être frais alors on fait pas la fête la veille)">Le brunch (on veut être frais alors on fait pas la fête la veille)</option>
+                                    <option value="On ne sera pas là, on n’a pas envie de venir">On ne sera pas là, on n’a pas envie de venir</option>
+                                    <option value="On ne sera pas là, et en plus on a une bonne excuse">On ne sera pas là, et en plus on a une bonne excuse</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="guests-group col-md-6 col-sm-6 col-xs-12 form-group">
+                            <div class="form-group-inner">
+                                <label for="cguests">Combien serez-vous ?</label>
+                                <select class="form-control" id="cguests" name="guests" aria-required="true" required>
+                                    <option value="" selected>Please select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="2+1enfant">2 + 1 enfant</option>
+                                    <option value="2+2enfants">2 + 2 enfants</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--<div class="guestinfo-group col-md-12 col-sm-12 col-xs-12 form-group" style="display:none">-->
+                            <!--<div class="form-group-inner">-->
+                                <!--<label for="cguestinfo">Guest(s) Name(s)</label>-->
+                                <!--<textarea class="form-control" id="cguestinfo" name="guestinfo" placeholder="Please provide full name(s)" required></textarea>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <div class="message-group col-md-12 col-sm-12 col-xs-12 form-group">
+                            <div class="form-group-inner">
+                                <label for="cmessage">Informations complémentaires</label>
+                                <textarea class="form-control" id="cmessage" name="message" placeholder="ex. végétariens ou allergies, ou les deux pour ceux qui cumulent"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            <button type="submit" class="btn btn-block btn-primary">Envoyer</button>
+                        </div>
+
+                        <div class="additional-info col-md-12 col-sm-12 col-xs-12 text-center">
+                            Si vous avez des questions ou envie de boire un coup, contactez nous par email à <a href="mailto:celine.bret67@gmail.com">celine.bret67@gmail.com</a> ou <a href="mailto:julien.halbeisen@free.fr">julien.halbeisen@free.fr</a>, ou appelez-nous au 0777202827 ou 0632543200.
+                        </div><!--//notes-->
+
+                    </div><!--//row-->
+                </form><!--//rsvp-form-->
+            </div><!--//modal-body-->
+        </div><!--//modal-content-->
+    </div><!--//modal-dialog-->
+</div><!--//modal-->
