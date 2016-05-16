@@ -66,243 +66,241 @@
 
     <% include partials/footer.ejs %>
 
-      <!-- The Bootstrap Image Gallery lightbox -->
-      <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
-          <!-- The container for the modal slides -->
-          <div class="slides"></div>
-          <!-- Controls for the borderless lightbox -->
-          <h3 class="title"></h3>
-          <a class="prev">‹</a>
-          <a class="next">›</a>
-          <a class="close">×</a>
-          <a class="play-pause"></a>
-          <ol class="indicator"></ol>
-          <!-- The modal dialog, which will be used to wrap the lightbox content -->
-          <div class="modal fade">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title"></h4>
-                      </div>
-                      <div class="modal-body next"></div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-default pull-left prev">
-                              <i class="glyphicon glyphicon-chevron-left"></i>
-                              Previous
-                          </button>
-                          <button type="button" class="btn btn-primary next">
-                              Next
-                              <i class="glyphicon glyphicon-chevron-right"></i>
-                          </button>
-                      </div>
+        <!-- The Bootstrap Image Gallery lightbox -->
+        <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+        <div class="modal fade">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title"></h4>
+                  </div>
+                  <div class="modal-body next"></div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default pull-left prev">
+                          <i class="glyphicon glyphicon-chevron-left"></i>
+                          Previous
+                      </button>
+                      <button type="button" class="btn btn-primary next">
+                          Next
+                          <i class="glyphicon glyphicon-chevron-right"></i>
+                      </button>
                   </div>
               </div>
           </div>
-      </div><!--blueimp-gallery-->
+        </div>
+        </div><!--blueimp-gallery-->
 
-      <!-- RSVP Modal -->
-      <div id="rsvp-modal" class="modal modal-rsvp"  tabindex="-1" role="dialog" aria-labelledby="rsvpModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h2 id="rsvpModalLabel" class="modal-title text-center">
-                          <span class="title script display-block"><span class="title-deco-left"></span><span class="title-text">RSVP</span><span class="title-deco-right"></span></span>
-                          <span class="subtitle display-block">Come and celebrate with us! <br> Please RSVP by May 16, 2016</span>
-                      </h2>
+        <!-- RSVP Modal -->
+        <div id="rsvp-modal" class="modal modal-rsvp"  tabindex="-1" role="dialog" aria-labelledby="rsvpModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h2 id="rsvpModalLabel" class="modal-title text-center">
+                      <span class="title script display-block"><span class="title-deco-left"></span><span class="title-text">RSVP</span><span class="title-deco-right"></span></span>
+                      <span class="subtitle display-block">Come and celebrate with us! <br> Please RSVP by May 16, 2016</span>
+                  </h2>
 
-                  </div><!--//modal-header-->
-                  <div class="modal-body">
-                      <form id="rsvp-form" class="rsvp-form form" method="post" action="mailer.php">
-                          <div id="form-messages" class="text-center"></div>
-                          <div class="row text-left">
-                              <div class="name-group col-md-6 col-sm-6 col-xs-12 form-group">
-                                  <div class="form-group-inner">
-                                      <label for="cname">Name</label>
-                                      <input type="text" class="form-control" id="cname" name="name" placeholder="Your full name" minlength="2"  aria-required="true" required>
-                                  </div>
+              </div><!--//modal-header-->
+              <div class="modal-body">
+                  <form id="rsvp-form" class="rsvp-form form" method="post" action="mailer.php">
+                      <div id="form-messages" class="text-center"></div>
+                      <div class="row text-left">
+                          <div class="name-group col-md-6 col-sm-6 col-xs-12 form-group">
+                              <div class="form-group-inner">
+                                  <label for="cname">Name</label>
+                                  <input type="text" class="form-control" id="cname" name="name" placeholder="Your full name" minlength="2"  aria-required="true" required>
                               </div>
-                              <div class="email-group col-md-6 col-sm-6 col-xs-12 form-group">
-                                  <div class="form-group-inner">
-                                      <label for="cemail">Email</label>
-                                      <input type="email" class="form-control" id="cemail" name="email" placeholder="Your email address" aria-required="true" required>
-                                  </div>
+                          </div>
+                          <div class="email-group col-md-6 col-sm-6 col-xs-12 form-group">
+                              <div class="form-group-inner">
+                                  <label for="cemail">Email</label>
+                                  <input type="email" class="form-control" id="cemail" name="email" placeholder="Your email address" aria-required="true" required>
                               </div>
+                          </div>
 
-                              <div class="events-group col-md-6 col-sm-6 col-xs-12 form-group">
-                                  <div class="form-group-inner">
-                                      <label for="cevents">Which events are you attending?</label>
-                                      <select class="form-control" id="cevents" name="events" aria-required="true" required>
-                                          <option value="" selected>Please select</option>
-                                          <option value="Ceremony and Reception">Ceremony and Reception</option>
-                                          <option value="Ceremony Only">Ceremony Only</option>
-                                          <option value="Reception Only">Reception Only</option>
-                                          <option value="Sorry, can't make either">Sorry, can't make either</option>
-                                      </select>
-                                  </div>
+                          <div class="events-group col-md-6 col-sm-6 col-xs-12 form-group">
+                              <div class="form-group-inner">
+                                  <label for="cevents">Which events are you attending?</label>
+                                  <select class="form-control" id="cevents" name="events" aria-required="true" required>
+                                      <option value="" selected>Please select</option>
+                                      <option value="Ceremony and Reception">Ceremony and Reception</option>
+                                      <option value="Ceremony Only">Ceremony Only</option>
+                                      <option value="Reception Only">Reception Only</option>
+                                      <option value="Sorry, can't make either">Sorry, can't make either</option>
+                                  </select>
                               </div>
+                          </div>
 
-                              <div class="guests-group col-md-6 col-sm-6 col-xs-12 form-group">
-                                  <div class="form-group-inner">
-                                      <label for="cguests">How many guests are you bringing?</label>
-                                      <select class="form-control" id="cguests" name="guests" aria-required="true" required>
-                                          <option value="" selected>Please select</option>
-                                          <option value="No Guests">No Guests</option>
-                                          <option value="1 Guest">1 Guest</option>
-                                          <option value="2 Guests">2 Guests</option>
-                                          <option value="3 Guests">3 Guests</option>
-                                          <option value="4 Guests">4 Guests</option>
-                                          <option value="5 Guests">5 Guests</option>
-                                      </select>
-                                  </div>
+                          <div class="guests-group col-md-6 col-sm-6 col-xs-12 form-group">
+                              <div class="form-group-inner">
+                                  <label for="cguests">How many guests are you bringing?</label>
+                                  <select class="form-control" id="cguests" name="guests" aria-required="true" required>
+                                      <option value="" selected>Please select</option>
+                                      <option value="No Guests">No Guests</option>
+                                      <option value="1 Guest">1 Guest</option>
+                                      <option value="2 Guests">2 Guests</option>
+                                      <option value="3 Guests">3 Guests</option>
+                                      <option value="4 Guests">4 Guests</option>
+                                      <option value="5 Guests">5 Guests</option>
+                                  </select>
                               </div>
+                          </div>
 
-                              <div class="guestinfo-group col-md-12 col-sm-12 col-xs-12 form-group" style="display:none">
-                                  <div class="form-group-inner">
-                                      <label for="cguestinfo">Guest(s) Name(s)</label>
-                                      <textarea class="form-control" id="cguestinfo" name="guestinfo" placeholder="Please provide full name(s)" required></textarea>
-                                  </div>
+                          <div class="guestinfo-group col-md-12 col-sm-12 col-xs-12 form-group" style="display:none">
+                              <div class="form-group-inner">
+                                  <label for="cguestinfo">Guest(s) Name(s)</label>
+                                  <textarea class="form-control" id="cguestinfo" name="guestinfo" placeholder="Please provide full name(s)" required></textarea>
                               </div>
+                          </div>
 
-                              <div class="message-group col-md-12 col-sm-12 col-xs-12 form-group">
-                                  <div class="form-group-inner">
-                                      <label for="cmessage">Additional Information</label>
-                                      <textarea class="form-control" id="cmessage" name="message" placeholder="eg. Vegetarian &amp; dietary requests"></textarea>
-                                  </div>
+                          <div class="message-group col-md-12 col-sm-12 col-xs-12 form-group">
+                              <div class="form-group-inner">
+                                  <label for="cmessage">Additional Information</label>
+                                  <textarea class="form-control" id="cmessage" name="message" placeholder="eg. Vegetarian &amp; dietary requests"></textarea>
                               </div>
+                          </div>
 
-                              <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                  <button type="submit" class="btn btn-block btn-primary">Submit</button>
-                              </div>
+                          <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                              <button type="submit" class="btn btn-block btn-primary">Submit</button>
+                          </div>
 
-                              <div class="additional-info col-md-12 col-sm-12 col-xs-12 text-center">
-                                  If you have any questions please let us know. You can either email us at <a href="#">amynickwedding@gmail.com</a> or give us a ring at 0133 123455
-                              </div><!--//notes-->
+                          <div class="additional-info col-md-12 col-sm-12 col-xs-12 text-center">
+                              If you have any questions please let us know. You can either email us at <a href="#">amynickwedding@gmail.com</a> or give us a ring at 0133 123455
+                          </div><!--//notes-->
 
-                          </div><!--//row-->
-                      </form><!--//rsvp-form-->
-                  </div><!--//modal-body-->
-              </div><!--//modal-content-->
-          </div><!--//modal-dialog-->
-      </div><!--//modal-->
-
-      <!-- Direction Modal-->
-      <div id="direction-modal" class="direction-modal modal" tabindex="-1" role="dialog" aria-labelledby="directionModalLabel">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title text-center" id="directionModalLabel">How to get to the events</h4>
-                  </div><!--//modal-header-->
-                  <div class="modal-body">
-                      <div class="row">
-                          <div class="event-col col-md-6 col-sm-6 col-xs-12">
-                              <h4 class="col-title text-center">Ceremony</h4>
-                              <div class="col-subtitle script text-center">St. Paul's Church</div>
-                              <div class="figure-container"><img class="img-responsive" src="/images/ceremony-building.jpg" alt="" /></div>
-                              <h5 class="section-title"><i class="fa fa-car"></i> By Car</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                              <h5 class="section-title"><i class="fa fa-train"></i> By Train</h5>
-                              <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                              <h5 class="section-title"><i class="fa fa-bus"></i> By Bus</h5>
-                              <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante.</p>
-                          </div><!--//event-col-->
-                          <div class="event-col col-md-6 col-sm-6 col-xs-12">
-                              <h4 class="col-title text-center">Reception</h4>
-                              <div class="col-subtitle script text-center">The Manor House</div>
-                              <div class="figure-container"><img class="img-responsive" src="/images/reception-building.jpg" alt="" /></div>
-
-                              <h5 class="section-title"><i class="fa fa-car"></i> By Car</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
-                              <h5 class="section-title"><i class="fa fa-train"></i> By Train</h5>
-                              <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. </p>
-                              <h5 class="section-title"><i class="fa fa-bus"></i> By Bus</h5>
-                              <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                          </div><!--//event-col-->
                       </div><!--//row-->
-                  </div><!--//modal-body-->
-              </div><!--//modal-content-->
-          </div>
-      </div><!--//modal-->
+                  </form><!--//rsvp-form-->
+              </div><!--//modal-body-->
+          </div><!--//modal-content-->
+        </div><!--//modal-dialog-->
+        </div><!--//modal-->
 
-      <!-- Facilities Modal 1-->
-      <div id="facilities-modal" class="facilities-modal modal" tabindex="-1" role="dialog" aria-labelledby="facilitiesModalLabel">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title text-center" id="facilitiesModalLabel">Facilities</h4>
-                  </div><!--//modal-header-->
-                  <div class="modal-body">
-                      <div class="row">
-                          <div class="event-col col-md-6 col-sm-6 col-xs-12">
-                              <h4 class="col-title text-center">Ceremony</h4>
-                              <div class="col-subtitle script text-center">St. Paul's Church</div>
-                              <ul class="list-unstyled facilities-list">
-                                  <li><i class="fa fa-check"></i> Internet Access / WiFi</li>
-                                  <li><i class="fa fa-check"></i> Disabled Access</li>
-                                  <li><i class="fa fa-check"></i> Bathroom and baby changing
-                                      <br>
-                                      <span class="details">There is a disabled bathroom with nappy changing facilities.</span>
-                                  </li>
-                                  <li><i class="fa fa-check"></i> Car Parking
-                                      <br>
-                                      <span class="details">There is a disabled bathroom with nappy changing facilities.</span>
-                                  </li>
+        <!-- Direction Modal-->
+        <div id="direction-modal" class="direction-modal modal" tabindex="-1" role="dialog" aria-labelledby="directionModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title text-center" id="directionModalLabel">How to get to the events</h4>
+              </div><!--//modal-header-->
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="event-col col-md-6 col-sm-6 col-xs-12">
+                          <h4 class="col-title text-center">Ceremony</h4>
+                          <div class="col-subtitle script text-center">St. Paul's Church</div>
+                          <div class="figure-container"><img class="img-responsive" src="/images/ceremony-building.jpg" alt="" /></div>
+                          <h5 class="section-title"><i class="fa fa-car"></i> By Car</h5>
+                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                          <h5 class="section-title"><i class="fa fa-train"></i> By Train</h5>
+                          <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                          <h5 class="section-title"><i class="fa fa-bus"></i> By Bus</h5>
+                          <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante.</p>
+                      </div><!--//event-col-->
+                      <div class="event-col col-md-6 col-sm-6 col-xs-12">
+                          <h4 class="col-title text-center">Reception</h4>
+                          <div class="col-subtitle script text-center">The Manor House</div>
+                          <div class="figure-container"><img class="img-responsive" src="/images/reception-building.jpg" alt="" /></div>
 
-                              </ul>
-                          </div><!--//event-col-->
-                          <div class="event-col col-md-6 col-sm-6 col-xs-12">
-                              <h4 class="col-title text-center">Reception</h4>
-                              <div class="col-subtitle script text-center">The Manor House</div>
-                              <ul class="list-unstyled facilities-list">
-                                  <li><i class="fa fa-check"></i> Wine Bar</li>
-                                  <li><i class="fa fa-check"></i> Internet Access / WiFi
-                                      <br>
-                                      <span class="details">Aenean commodo ligula eget dolor.</span>
-                                  </li>
-                                  <li><i class="fa fa-check"></i> Disabled Access</li>
-                                  <li><i class="fa fa-check"></i> Bathroom and baby changing</li>
-                                  <li><i class="fa fa-check"></i> Car Parking
-                                      <br>
-                                      <span class="details">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes</span>
-                                  </li>
-                              </ul>
-                          </div><!--//event-col-->
-                      </div><!--//row-->
-                  </div><!--//modal-body-->
-              </div><!--//modal-content-->
-          </div>
-      </div><!--//modal-->
+                          <h5 class="section-title"><i class="fa fa-car"></i> By Car</h5>
+                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
+                          <h5 class="section-title"><i class="fa fa-train"></i> By Train</h5>
+                          <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. </p>
+                          <h5 class="section-title"><i class="fa fa-bus"></i> By Bus</h5>
+                          <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                      </div><!--//event-col-->
+                  </div><!--//row-->
+              </div><!--//modal-body-->
+          </div><!--//modal-content-->
+        </div>
+        </div><!--//modal-->
 
-    <script type="text/javascript" src="/plugins/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
-    <script type="text/javascript" src="/plugins/back-to-top.js"></script>
-    <script type="text/javascript" src="/plugins/jquery-placeholder/jquery.placeholder.js"></script>
-    <script type="text/javascript" src="/plugins/jquery-inview/jquery.inview.min.js"></script>
-    <script type="text/javascript" src="/plugins/imagesloaded.pkgd.min.js"></script>
-    <script type="text/javascript" src="/plugins/packery.pkgd.min.js"></script>
-    <script type="text/javascript" src="/plugins/instafeed.min.js"></script>
+        <!-- Facilities Modal 1-->
+        <div id="facilities-modal" class="facilities-modal modal" tabindex="-1" role="dialog" aria-labelledby="facilitiesModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title text-center" id="facilitiesModalLabel">Facilities</h4>
+              </div><!--//modal-header-->
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="event-col col-md-6 col-sm-6 col-xs-12">
+                          <h4 class="col-title text-center">Ceremony</h4>
+                          <div class="col-subtitle script text-center">St. Paul's Church</div>
+                          <ul class="list-unstyled facilities-list">
+                              <li><i class="fa fa-check"></i> Internet Access / WiFi</li>
+                              <li><i class="fa fa-check"></i> Disabled Access</li>
+                              <li><i class="fa fa-check"></i> Bathroom and baby changing
+                                  <br>
+                                  <span class="details">There is a disabled bathroom with nappy changing facilities.</span>
+                              </li>
+                              <li><i class="fa fa-check"></i> Car Parking
+                                  <br>
+                                  <span class="details">There is a disabled bathroom with nappy changing facilities.</span>
+                              </li>
 
-    <!--//form related JS -->
-    <script type="text/javascript" src="/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-    <!--//Google map related JS -->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
-    <script type="text/javascript" src="/plugins/gmaps/gmaps.js"></script>
-    <!--//Image Gallery related JS -->
-    <script type="text/javascript" src="/plugins/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-    <script type="text/javascript" src="/plugins/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js"></script>
-    <!-- Form iOS fix -->
-    <script type="text/javascript" src="/plugins/isMobile/isMobile.min.js"></script>
+                          </ul>
+                      </div><!--//event-col-->
+                      <div class="event-col col-md-6 col-sm-6 col-xs-12">
+                          <h4 class="col-title text-center">Reception</h4>
+                          <div class="col-subtitle script text-center">The Manor House</div>
+                          <ul class="list-unstyled facilities-list">
+                              <li><i class="fa fa-check"></i> Wine Bar</li>
+                              <li><i class="fa fa-check"></i> Internet Access / WiFi
+                                  <br>
+                                  <span class="details">Aenean commodo ligula eget dolor.</span>
+                              </li>
+                              <li><i class="fa fa-check"></i> Disabled Access</li>
+                              <li><i class="fa fa-check"></i> Bathroom and baby changing</li>
+                              <li><i class="fa fa-check"></i> Car Parking
+                                  <br>
+                                  <span class="details">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes</span>
+                              </li>
+                          </ul>
+                      </div><!--//event-col-->
+                  </div><!--//row-->
+              </div><!--//modal-body-->
+          </div><!--//modal-content-->
+        </div>
+        </div><!--//modal-->
 
-    <!--SCRIPTS-->
-    <script src="/js/dependencies/sails.io.js"></script>
-    <script src="/js/ajax-form.js"></script>
-    <script src="/js/animations.js"></script>
-    <script src="/js/form-mobile-fix.js"></script>
-    <script src="/js/main.js"></script>
-    <!--SCRIPTS END-->
-  </body>
+        <script type="text/javascript" src="/plugins/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+        <script type="text/javascript" src="/plugins/back-to-top.js"></script>
+        <script type="text/javascript" src="/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+        <script type="text/javascript" src="/plugins/jquery-inview/jquery.inview.min.js"></script>
+        <script type="text/javascript" src="/plugins/imagesloaded.pkgd.min.js"></script>
+        <script type="text/javascript" src="/plugins/packery.pkgd.min.js"></script>
+        <script type="text/javascript" src="/plugins/instafeed.min.js"></script>
+
+        <!--//form related JS -->
+        <script type="text/javascript" src="/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+        <!--//Image Gallery related JS -->
+        <script type="text/javascript" src="/plugins/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+        <script type="text/javascript" src="/plugins/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js"></script>
+        <!-- Form iOS fix -->
+        <script type="text/javascript" src="/plugins/isMobile/isMobile.min.js"></script>
+
+        <!--SCRIPTS-->
+        <script src="/js/dependencies/sails.io.js"></script>
+        <script src="/js/ajax-form.js"></script>
+        <script src="/js/animations.js"></script>
+        <script src="/js/form-mobile-fix.js"></script>
+        <script src="/js/main.js"></script>
+        <!--SCRIPTS END-->
+    </body>
 </html>

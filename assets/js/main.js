@@ -75,44 +75,6 @@ $(document).ready(function() {
      
     }, 1000);
 
-    /* ======= Google Map ======= */
-    var map = new GMaps({
-        div: '#map',
-        lat: 48.7121523,
-        lng: 7.1071901,
-        scrollwheel: false,
-        zoom: 5,
-    });
-    
-    map.addMarker({
-        lat: 48.7121523,
-        lng: 7.1071901,
-        verticalAlign: 'top',
-        title: 'Ceremony Location',  
-        infoWindow: {
-            content: '<div class="note">Cérémonie</div><h4 class="map-title script">Restaurant M</h4><div class="address"><span class="region">7 place du Général de Gaulle</span><br><span class="postal-code">57565</span><br><span class="city-name">Niderviller</span></div>'
-        }
-    });
-
-    //map.addMarker({
-    //    lat: 50.969747,
-    //    lng: -3.199985,
-    //    title: 'Reception Location',
-    //    infoWindow: {
-    //        content: '<div class="note">Reception</div><h4 class="map-title script">The Manor House</h4><div class="address"><span class="region">Address line goes here</span><br><span class="postal-code">Postcode</span><br><span class="city-name">City</span></div>'
-    //    }
-    //
-    //});
-    
-    /*display marker 1 address on load */
-    google.maps.event.trigger(map.markers[0], 'click');
-    /*display marker 2 address on load */
-    google.maps.event.trigger(map.markers[1], 'click');
-    
-    
-    
-    
-
     /* ======= Instagram ======= */
     //Instafeed.js - add Instagram photos to your website
     //Ref: http://instafeedjs.com/
@@ -143,7 +105,6 @@ $(document).ready(function() {
     // run our feed!
     feed.run();
 
-    
     /* ===== Packery ===== */
     //Ref: http://packery.metafizzy.co/
     //Ref: http://imagesloaded.desandro.com/
@@ -157,7 +118,6 @@ $(document).ready(function() {
             percentPosition: true
         });
     });
-    
     
     /* ======= RSVP Form (Dependent form field) ============ */
     $('#cguests').on("change", function(){
@@ -200,6 +160,84 @@ $(document).ready(function() {
 			},
 		}
 	});
-  
-
 });
+
+function initMap() {
+    // https://developers.google.com/maps/documentation/javascript/reference#Marker
+    // https://developers.google.com/maps/documentation/javascript/infowindows#open
+    var coordNiderviller = {lat: 48.7121523, lng: 7.1071901};
+    var coordStrasbourg = {lat: 48.584922, lng: 7.7750307};
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: coordStrasbourg,
+        scrollwheel: false
+    });
+
+    // Niderviller address (ceremonie + brunch)
+    var infowindow = new google.maps.InfoWindow({
+        content: '' +
+        '<div class="note">Vin d\'honneur et réception</div>' +
+        '<div class="">(Brunch le dimanche)</div>' +
+        '<h4 class="map-title script">Restaurant M</h4>' +
+        '<div class="address">' +
+        '<span class="region">7 place du Général de Gaulle</span><br>' +
+        '<span class="postal-code">57565</span><br>' +
+        '<span class="city-name">Niderviller</span><br>' +
+        '</div>'
+    });
+    var marker = new google.maps.Marker({
+        position: coordNiderviller,
+        map: map,
+        title: 'Vin d\'honneur et réception'
+    });
+    marker.addListener('click', function() {
+        infowindow.open(map, marker);
+        infowindow2.close();
+    });
+
+    // Mariage
+    var infowindow2 = new google.maps.InfoWindow({
+        content: '' +
+        '<div class="note">Cérémonie</div>' +
+        '<h4 class="map-title script">Salle des mariages, hôtel de ville</h4>' +
+        '<div class="address">' +
+        '<span class="region">Place Broglie</span><br>' +
+        '<span class="postal-code">67000</span><br>' +
+        '<span class="city-name">Strasbourg</span><br>' +
+        '</div>'
+    });
+    var marker2 = new google.maps.Marker({
+        position: coordStrasbourg,
+        map: map,
+        title: 'Cérémonie'
+    });
+    infowindow2.open(map, marker2);
+    marker2.addListener('click', function() {
+        infowindow.close();
+        infowindow2.open(map, marker2);
+    });
+
+    var markers = {
+        niderviller: {
+            marker: marker,
+            infoWindow: infowindow
+        },
+        strasbourg: {
+            marker: marker2,
+            infoWindow: infowindow2
+        }
+    };
+
+    // This listener allow opening correct marker info on click
+    // by specifying [data] value
+    $('[data-target-map-marker]').on('click', function(){
+        // close all previous info
+        for(var tmp in markers){
+            markers[tmp].infoWindow.close();
+        }
+        // open info for current marker
+        var marker = markers[$(this).data('targetMapMarker')];
+        marker.infoWindow.open(map, marker.marker);
+    });
+}

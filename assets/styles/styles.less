@@ -1,3 +1,39 @@
+@color-primary: #82cec0;
+@theme-default: #82cec0;
+@color-secondary: #f4af9c;
+
+.flex-container {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+
+    &.flex-inline {
+        display: -webkit-inline-flex; /* Safari */
+        display: inline-flex;
+    }
+}
+
 .hero-box .date{
     font-size: 23px;
+}
+
+.couple-profile {
+    background: transparent url('../images/gift-picture.jpg') no-repeat center center;
+}
+
+a.btn-rsvp{
+    background: @color-secondary;
+    &.active {
+        &:hover, &:active, &:focus {
+            background: darken(@color-secondary, 5%);
+        }
+    }
+    &:hover {
+        background: darken(@color-secondary, 5%);
+    }
+    &:active {
+        background: darken(@color-secondary, 5%);
+    }
+    &:focus {
+        background: darken(@color-secondary, 5%);
+    }
 }
