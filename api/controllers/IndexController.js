@@ -5,6 +5,7 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 var nodemailer = require('nodemailer');
+var sendmailTransport = require('nodemailer-sendmail-transport');
 
 module.exports = {
 
@@ -21,8 +22,11 @@ module.exports = {
      * @param res
      */
     mail: function(req, res) {
-        
-        var transporter = nodemailer.createTransport('smtps://' + sails.config.gmailSmtpUsername + '%40gmail.com:' + sails.config.gmailSmtpPassword + '@smtp.gmail.com');
+
+        var transporter = nodemailer.createTransport(sendmailTransport({
+
+        }));
+        // var transporter = nodemailer.createTransport('smtps://' + sails.config.gmailSmtpUsername + '%40gmail.com:' + sails.config.gmailSmtpPassword + '@smtp.gmail.com');
         var from = '"cjwedding.fr 🐴" <bret.maxime@gmail.com>';
 
         // Email to get
