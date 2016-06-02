@@ -39,7 +39,7 @@ module.exports = {
 
         // Confirm email to send to guest
         var callbackMail = {
-            from: '"cjwedding.fr" <' + sails.config.mail.contactMail + '>',
+            from: sails.config.mail.contactMail,
             to: req.body.email,
             subject: 'Confirmation bien envoyée ✔',
             html: '' +
