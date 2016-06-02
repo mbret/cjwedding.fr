@@ -4,8 +4,6 @@
  * @description :: Server-side logic for managing Indexcontrollers
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-var nodemailer = require('nodemailer');
-var sendmailTransport = require('nodemailer-sendmail-transport');
 var Mailgun = require('mailgun-js');
 var domain = 'cjwedding.fr';
 
@@ -25,11 +23,11 @@ module.exports = {
      */
     mail: function(req, res) {
 
-        var mailgun = new Mailgun({apiKey: sails.config.mailgunApiKey, domain: domain});
+        var mailgun = new Mailgun({apiKey: sails.config.mail.mailgunApiKey, domain: domain});
         
         var data = {
             from: req.body.email,
-            to: sails.config.recipientMail,
+            to: sails.config.mail.recipientMail,
             subject: 'Confirmation reçu de ' + req.body.name + ' ✔',
             html: '' +
             '<b>Nouvelle confirmation reçu de ' + req.body.name + ' :</b>' +
@@ -41,10 +39,11 @@ module.exports = {
 
         // Confirm email to send to guest
         var callbackMail = {
-            from: '"cjwedding.fr" <' + sails.config.contactMail + '>',
+            from: '"cjwedding.fr" <' + sails.config.mail.contactMail + '>',
             to: req.body.email,
             subject: 'Confirmation bien envoyée ✔',
-            html: '<b>Merci pour votre confirmation</b>'
+            html: '' +
+            'Merci pour votre confirmation'
         };
 
         // send mail with defined transport object
