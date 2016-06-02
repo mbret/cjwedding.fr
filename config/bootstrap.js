@@ -15,8 +15,9 @@ module.exports.bootstrap = function(cb) {
   //   return cb(new Error('Please set the gmail smtp password'));
   // }
 
+    console.log(sails.config.mail);
     if(!sails.config.mail.mailgunApiKey) {
-      return cb(new Error('Please set the mailgun api key'));
+        return cb(new Error('Please set the mailgun api key'));
     }
 
   // It's very important to trigger this callback method when you are finished

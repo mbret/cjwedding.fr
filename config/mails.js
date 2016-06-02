@@ -12,7 +12,7 @@
 
 module.exports.mail = {
   // from
-  contactMail: 'contact@cjwedding.fr',
+  contactMail: 'bret.maxime@gmail.com',
   // To retrieve mail from users
   recipientMail: 'bret.maxime@gmail.com',
 };
