@@ -25,7 +25,7 @@ module.exports = {
     mail: function(req, res) {
 
         var mailgun = new Mailgun({apiKey: sails.config.mail.mailgunApiKey, domain: domain});
-        
+
         var data = {
             from: req.body.email,
             to: sails.config.mail.recipientMail,
@@ -59,7 +59,20 @@ module.exports = {
             }
 
             // ignore error on this mail
-            mailgun.messages().send(callbackMail);
+            mailgun.messages().send(callbackMail, function(err) {
+                if (err) {
+                    sails.log.error("Unable to send callback mail to " + req.body.email, err);
+                    // try to contact admin to tell problem
+                    mailgun.messages().send({
+                        from: sails.config.mail.contactMail,
+                        to: "bret.maxime@gmail.com, " + sails.config.mail.recipientMail,
+                        subject: "Unable to deliver mail to " + req.body.email,
+                        html: "Unable to deliver confirmation callback mail to " + req.body.email + "." +
+                        "<br>Here are the error details:" +
+                        "<br><br>" + err.stack
+                    });
+                }
+            });
 
             return res.ok('Confirmation envoyée');
         });
