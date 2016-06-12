@@ -11,8 +11,8 @@ var domain = 'cjwedding.fr';
 module.exports = {
 
     /**
-    * `IndexController.index()`
-    */
+     * `IndexController.index()`
+     */
     index: function (req, res) {
         return res.view('pages/homepage');
     },
@@ -44,7 +44,12 @@ module.exports = {
             to: req.body.email,
             subject: 'Confirmation bien envoyée ✔',
             html: '' +
-            'Merci pour votre confirmation'
+            'Merci pour votre confirmation et à très vite pour faire la fête :)' +
+            '<br>D’ici là, on retourne à nos cutters, machines à coudre et pots de peinture pour vous préparer' +
+            '<br>une soirée d’enfer!' +
+            '<br>Et si parmi vous se cachent des petits filous qui préparent des surprises, vous pouvez contacter' +
+            '<br>Raymond Halbeisen (halbeisenray@free.fr), le grand frère de Julien, qui nous aide à organiser le déroulement de la soirée.' +
+            '<br><br>Céline & Julien'
         };
 
         // send mail with defined transport object
