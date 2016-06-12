@@ -10,11 +10,9 @@
  *
  */
 
-module.exports = {
+module.exports.mail = {
   // from
-  contactMail: 'contact@cjwedding.fr',
-  // to retrieve mail from users
+  contactMail: 'bret.maxime@gmail.com',
+  // To retrieve mail from users
   recipientMail: 'bret.maxime@gmail.com',
-  gmailSmtpUsername: 'bret.maxime',
-  gmailSmtpPassword: null, // must be set on local.js
 };
