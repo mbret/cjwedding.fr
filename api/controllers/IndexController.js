@@ -5,7 +5,6 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 var nodemailer = require('nodemailer');
-var sendmailTransport = require('nodemailer-sendmail-transport');
 var Mailgun = require('mailgun-js');
 var domain = 'cjwedding.fr';
 
