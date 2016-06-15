@@ -4,14 +4,15 @@
  * @description :: Server-side logic for managing Indexcontrollers
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
+var nodemailer = require('nodemailer');
 var Mailgun = require('mailgun-js');
 var domain = 'cjwedding.fr';
 
 module.exports = {
 
     /**
-    * `IndexController.index()`
-    */
+     * `IndexController.index()`
+     */
     index: function (req, res) {
         return res.view('pages/homepage');
     },
@@ -24,7 +25,7 @@ module.exports = {
     mail: function(req, res) {
 
         var mailgun = new Mailgun({apiKey: sails.config.mail.mailgunApiKey, domain: domain});
-        
+
         var data = {
             from: req.body.email,
             to: sails.config.mail.recipientMail,
@@ -43,7 +44,12 @@ module.exports = {
             to: req.body.email,
             subject: 'Confirmation bien envoyée ✔',
             html: '' +
-            'Merci pour votre confirmation'
+            'Merci pour votre confirmation et à très vite pour faire la fête :)' +
+            '<br>D’ici là, on retourne à nos cutters, machines à coudre et pots de peinture pour vous préparer' +
+            '<br>une soirée d’enfer!' +
+            '<br>Et si parmi vous se cachent des petits filous qui préparent des surprises, vous pouvez contacter' +
+            '<br>Raymond Halbeisen (halbeisenray@free.fr), le grand frère de Julien, qui nous aide à organiser le déroulement de la soirée.' +
+            '<br><br>Céline & Julien'
         };
 
         // send mail with defined transport object
@@ -53,7 +59,20 @@ module.exports = {
             }
 
             // ignore error on this mail
-            mailgun.messages().send(callbackMail);
+            mailgun.messages().send(callbackMail, function(err) {
+                if (err) {
+                    sails.log.error("Unable to send callback mail to " + req.body.email, err);
+                    // try to contact admin to tell problem
+                    mailgun.messages().send({
+                        from: sails.config.mail.contactMail,
+                        to: "bret.maxime@gmail.com, " + sails.config.mail.recipientMail,
+                        subject: "Unable to deliver mail to " + req.body.email,
+                        html: "Unable to deliver confirmation callback mail to " + req.body.email + "." +
+                        "<br>Here are the error details:" +
+                        "<br><br>" + err.stack
+                    });
+                }
+            });
 
             return res.ok('Confirmation envoyée');
         });
