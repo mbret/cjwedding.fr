@@ -37,3 +37,40 @@ a.btn-rsvp{
         background: darken(@color-secondary, 5%);
     }
 }
+
+@media (max-width: 767px) {
+    .reception-col {
+        margin-bottom: 30px;
+    }
+}
+
+
+// This is very dirty fix to make all bloc have same height (use flex for futur projects)
+
+@media (min-width: 768px) {
+    .ceremony-col .col-inner {
+        min-height: 495px;
+    }
+    .reception-col .col-inner {
+        min-height: 550px;
+    }
+}
+
+@media (min-width: 992px) {
+    .ceremony-col .col-inner {
+        min-height: 474px;
+    }
+    .reception-col .col-inner {
+        min-height: 507px;
+    }
+}
+
+// at container break point
+@media (min-width: 1200px) {
+    .ceremony-col .col-inner {
+        min-height: auto;
+    }
+    .reception-col .col-inner {
+        min-height: 486px;
+    }
+}
