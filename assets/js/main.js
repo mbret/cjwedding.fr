@@ -115,6 +115,45 @@ $(document).ready(function() {
     });
 });
 
+function is_touch_device() {
+    return !!('ontouchstart' in window) // works on most browsers
+        || !!('onmsgesturechange' in window); // works on ie10
+}
+
+function ToggleDrag(controlDiv, map) {
+
+    // Set CSS for the control border.
+    var controlUI = document.createElement('div');
+    controlUI.style.backgroundColor = '#fff';
+    controlUI.style.borderRadius = '3px';
+    controlUI.style.cursor = 'pointer';
+    controlUI.style.marginBottom = '22px';
+    controlUI.style.margin = '10px';
+    controlUI.style.textAlign = 'center';
+    controlUI.title = 'Cliquez pour activer ou désactiver le contrôle de la map';
+    controlDiv.appendChild(controlUI);
+
+    var a = document.createElement("div");
+    a.className += "gm-style-mtc";
+    controlUI.appendChild(a);
+
+    // Set CSS for the control interior.
+    var controlText = document.createElement('div');
+    controlText.style.color = 'rgb(25,25,25)';
+    controlText.style.fontSize = '11px';
+    controlText.style.padding = '8px';
+    controlText.style.boxShadow = "0px 1px 4px -1px rgba(0, 0, 0, 0.298039)";
+    controlText.innerHTML = map.draggable ? 'Désactiver le contrôle de map' : "Activer le contrôle de map";
+    a.appendChild(controlText);
+
+    controlUI.addEventListener('click', function() {
+        map.setOptions( {
+            draggable: !map.draggable
+        });
+        controlText.innerHTML = map.draggable ? 'Désactiver le contrôle de map' : "Activer le contrôle de map";
+    });
+}
+
 function initMap() {
     // https://developers.google.com/maps/documentation/javascript/reference#Marker
     // https://developers.google.com/maps/documentation/javascript/infowindows#open
@@ -124,8 +163,15 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: coordStrasbourg,
-        scrollwheel: false
+        scrollwheel: false,
+        draggable: !is_touch_device()
     });
+
+    // Create the DIV to hold the control and call the CenterControl()
+    // constructor passing in this DIV.
+    var toggleDagControlDiv = document.createElement('div');
+    var toggleDagControl = new ToggleDrag(toggleDagControlDiv, map);
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleDagControlDiv);
 
     // Niderviller address (ceremonie + brunch)
     var infowindow = new google.maps.InfoWindow({
